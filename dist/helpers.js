@@ -103,7 +103,7 @@ var getDepPath = function getDepPath(dep) {
 
 // public helpers
 var getConfigOption = function getConfigOption(key) {
-  return atom.config.get('prettier-atom.' + key);
+  return atom.config.get('prettier-atom-space-parenthesis.' + key);
 };
 
 var shouldDisplayErrors = function shouldDisplayErrors() {
@@ -196,7 +196,7 @@ var getDebugInfo = function getDebugInfo() {
     prettierAtomVersion: readPkg.sync().version,
     prettierVersion: readPkg.sync(getDepPath('prettier')).version,
     prettierESLintVersion: readPkg.sync(getDepPath('prettier-eslint')).version,
-    prettierAtomConfig: atom.config.get('prettier-atom')
+    prettierAtomConfig: atom.config.get('prettier-atom-space-parenthesis')
   };
 };
 

@@ -2,8 +2,8 @@
 const { shouldUseEslint, isLinterEslintAutofixEnabled } = require('./helpers');
 
 const message =
-  "prettier-atom: linter-eslint's `Fix on Save` feature is currently enabled. " +
-  'We recommend disabling this feature when using the ESlint integration from prettier-atom';
+  "prettier-atom-space-parenthesis: linter-eslint's `Fix on Save` feature is currently enabled. " +
+  'We recommend disabling this feature when using the ESlint integration from prettier-atom-space-parenthesis';
 
 const options = { dismissable: true };
 

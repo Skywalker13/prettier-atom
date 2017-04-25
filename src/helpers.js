@@ -80,7 +80,7 @@ const isLinterLintCommandDefined = (editor: TextEditor) =>
 const getDepPath = (dep: string) => path.join(__dirname, '../node_modules', dep);
 
 // public helpers
-const getConfigOption = (key: string) => atom.config.get(`prettier-atom.${key}`);
+const getConfigOption = (key: string) => atom.config.get(`prettier-atom-space-parenthesis.${key}`);
 
 const shouldDisplayErrors = () => !getConfigOption('silenceErrors');
 
@@ -148,7 +148,7 @@ const getDebugInfo = () => ({
   prettierAtomVersion: readPkg.sync().version,
   prettierVersion: readPkg.sync(getDepPath('prettier')).version,
   prettierESLintVersion: readPkg.sync(getDepPath('prettier-eslint')).version,
-  prettierAtomConfig: atom.config.get('prettier-atom'),
+  prettierAtomConfig: atom.config.get('prettier-atom-space-parenthesis'),
 });
 
 module.exports = {

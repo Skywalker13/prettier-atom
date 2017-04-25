@@ -15,7 +15,7 @@ const {
 const EMBEDDED_JS_REGEX = /<script\b[^>]*>([\s\S]*?)(?=<\/script>)/gi;
 
 const displayError = (error) => {
-  atom.notifications.addError('prettier-atom failed!', {
+  atom.notifications.addError('prettier-atom-space-parenthesis failed!', {
     detail: error,
     stack: error.stack,
     dismissable: true,

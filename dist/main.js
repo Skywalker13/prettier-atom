@@ -63,14 +63,14 @@ var activate = function activate() {
   subscriptions.add(atom.config.observe('linter-eslint.fixOnSave', function () {
     return lazyWarnAboutLinterEslintFixOnSave();
   }));
-  subscriptions.add(atom.config.observe('prettier-atom.useEslint', function () {
+  subscriptions.add(atom.config.observe('prettier-atom-space-parenthesis.useEslint', function () {
     return lazyWarnAboutLinterEslintFixOnSave();
   }));
 
   // HACK: an Atom bug seems to be causing old configuration settings to linger for some users
   //       https://github.com/jlongster/prettier-atom/issues/72
-  atom.config.unset('prettier-atom.singleQuote');
-  atom.config.unset('prettier-atom.trailingComma');
+  atom.config.unset('prettier-atom-space-parenthesis.singleQuote');
+  atom.config.unset('prettier-atom-space-parenthesis.trailingComma');
 };
 
 var deactivate = function deactivate() {

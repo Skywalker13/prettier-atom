@@ -29,14 +29,14 @@ jest.mock('atom-linter');
 jest.mock('prettier');
 
 describe('getConfigOption', () => {
-  test('retrieves a config option from the prettier-atom config', () => {
+  test('retrieves a config option from the prettier-atom-space-parenthesis config', () => {
     const mockGet = jest.fn(() => 'foo');
     atom = { config: { get: mockGet } };
 
     const actual = getConfigOption('foo');
     const expected = 'foo';
 
-    expect(mockGet).lastCalledWith('prettier-atom.foo');
+    expect(mockGet).lastCalledWith('prettier-atom-space-parenthesis.foo');
     expect(actual).toBe(expected);
   });
 });
@@ -49,33 +49,33 @@ describe('shouldDisplayErrors', () => {
     const actual = shouldDisplayErrors();
     const expected = false;
 
-    expect(mockGet).lastCalledWith('prettier-atom.silenceErrors');
+    expect(mockGet).lastCalledWith('prettier-atom-space-parenthesis.silenceErrors');
     expect(actual).toBe(expected);
   });
 });
 
 describe('getPrettierOption', () => {
-  test('retrieves the given prettier option from the prettier-atom config', () => {
+  test('retrieves the given prettier option from the prettier-atom-space-parenthesis config', () => {
     const mockGet = jest.fn(() => 'auto');
     atom = { config: { get: mockGet } };
 
     const actual = getPrettierOption('tabWidth');
     const expected = 'auto';
 
-    expect(mockGet).lastCalledWith('prettier-atom.prettierOptions.tabWidth');
+    expect(mockGet).lastCalledWith('prettier-atom-space-parenthesis.prettierOptions.tabWidth');
     expect(actual).toBe(expected);
   });
 });
 
 describe('getPrettierEslintOption', () => {
-  test('retrieves the given prettier-eslint option from the prettier-atom config', () => {
+  test('retrieves the given prettier-eslint option from the prettier-atom-space-parenthesis config', () => {
     const mockGet = jest.fn(() => true);
     atom = { config: { get: mockGet } };
 
     const actual = getPrettierEslintOption('prettierLast');
     const expected = true;
 
-    expect(mockGet).lastCalledWith('prettier-atom.prettierEslintOptions.prettierLast');
+    expect(mockGet).lastCalledWith('prettier-atom-space-parenthesis.prettierEslintOptions.prettierLast');
     expect(actual).toBe(expected);
   });
 });
@@ -135,7 +135,7 @@ describe('isInScope', () => {
     const actual = isInScope(editor);
     const expected = true;
 
-    expect(mockGet).toHaveBeenCalledWith('prettier-atom.formatOnSaveOptions.scopes');
+    expect(mockGet).toHaveBeenCalledWith('prettier-atom-space-parenthesis.formatOnSaveOptions.scopes');
     expect(mockGetGrammar).toHaveBeenCalled();
     expect(actual).toBe(expected);
   });
@@ -150,7 +150,7 @@ describe('isInScope', () => {
     const expected = false;
 
     expect(mockGetGrammar).toHaveBeenCalled();
-    expect(mockGet).toHaveBeenCalledWith('prettier-atom.formatOnSaveOptions.scopes');
+    expect(mockGet).toHaveBeenCalledWith('prettier-atom-space-parenthesis.formatOnSaveOptions.scopes');
     expect(actual).toBe(expected);
   });
 });
@@ -175,7 +175,7 @@ describe('shouldUseEslint', () => {
     const actual = shouldUseEslint();
     const expected = true;
 
-    expect(mockGet).toHaveBeenCalledWith('prettier-atom.useEslint');
+    expect(mockGet).toHaveBeenCalledWith('prettier-atom-space-parenthesis.useEslint');
     expect(actual).toBe(expected);
   });
 
@@ -186,7 +186,7 @@ describe('shouldUseEslint', () => {
     const actual = shouldUseEslint();
     const expected = false;
 
-    expect(mockGet).toHaveBeenCalledWith('prettier-atom.useEslint');
+    expect(mockGet).toHaveBeenCalledWith('prettier-atom-space-parenthesis.useEslint');
     expect(actual).toBe(expected);
   });
 });
@@ -242,7 +242,7 @@ describe('isFilePathExcluded', () => {
     const actual = isFilePathExcluded('foo.js');
     const expected = false;
 
-    expect(atom.config.get).toHaveBeenCalledWith('prettier-atom.formatOnSaveOptions.excludedGlobs');
+    expect(atom.config.get).toHaveBeenCalledWith('prettier-atom-space-parenthesis.formatOnSaveOptions.excludedGlobs');
     expect(actual).toBe(expected);
   });
 
@@ -252,7 +252,7 @@ describe('isFilePathExcluded', () => {
     const actual = isFilePathExcluded('foo.js');
     const expected = true;
 
-    expect(atom.config.get).toHaveBeenCalledWith('prettier-atom.formatOnSaveOptions.excludedGlobs');
+    expect(atom.config.get).toHaveBeenCalledWith('prettier-atom-space-parenthesis.formatOnSaveOptions.excludedGlobs');
     expect(actual).toBe(expected);
   });
 });
@@ -264,7 +264,7 @@ describe('isFilePathWhitelisted', () => {
     const actual = isFilePathWhitelisted('foo.js');
     const expected = false;
 
-    expect(atom.config.get).toHaveBeenCalledWith('prettier-atom.formatOnSaveOptions.whitelistedGlobs');
+    expect(atom.config.get).toHaveBeenCalledWith('prettier-atom-space-parenthesis.formatOnSaveOptions.whitelistedGlobs');
     expect(actual).toBe(expected);
   });
 
@@ -274,7 +274,7 @@ describe('isFilePathWhitelisted', () => {
     const actual = isFilePathWhitelisted('foo.js');
     const expected = true;
 
-    expect(atom.config.get).toHaveBeenCalledWith('prettier-atom.formatOnSaveOptions.whitelistedGlobs');
+    expect(atom.config.get).toHaveBeenCalledWith('prettier-atom-space-parenthesis.formatOnSaveOptions.whitelistedGlobs');
     expect(actual).toBe(expected);
   });
 });
@@ -284,7 +284,7 @@ describe('isWhitelistProvided', () => {
     atom = { config: { get: jest.fn(() => ['*.js']) } };
     const actual = isWhitelistProvided();
     const expected = true;
-    expect(atom.config.get).toHaveBeenCalledWith('prettier-atom.formatOnSaveOptions.whitelistedGlobs');
+    expect(atom.config.get).toHaveBeenCalledWith('prettier-atom-space-parenthesis.formatOnSaveOptions.whitelistedGlobs');
     expect(actual).toBe(expected);
   });
 
@@ -292,7 +292,7 @@ describe('isWhitelistProvided', () => {
     atom = { config: { get: jest.fn(() => []) } };
     const actual = isWhitelistProvided();
     const expected = false;
-    expect(atom.config.get).toHaveBeenCalledWith('prettier-atom.formatOnSaveOptions.whitelistedGlobs');
+    expect(atom.config.get).toHaveBeenCalledWith('prettier-atom-space-parenthesis.formatOnSaveOptions.whitelistedGlobs');
     expect(actual).toBe(expected);
   });
 });
@@ -319,15 +319,15 @@ describe('getPrettierOptions', () => {
   test('returns all prettier options', () => {
     const mockGet = option =>
       ({
-        'prettier-atom.prettierOptions.printWidth': 80,
-        'prettier-atom.prettierOptions.tabWidth': 2,
-        'prettier-atom.prettierOptions.parser': 'flow',
-        'prettier-atom.prettierOptions.singleQuote': true,
-        'prettier-atom.prettierOptions.trailingComma': true,
-        'prettier-atom.prettierOptions.bracketSpacing': true,
-        'prettier-atom.prettierOptions.semi': true,
-        'prettier-atom.prettierOptions.useTabs': true,
-        'prettier-atom.prettierOptions.jsxBracketSameLine': true,
+        'prettier-atom-space-parenthesis.prettierOptions.printWidth': 80,
+        'prettier-atom-space-parenthesis.prettierOptions.tabWidth': 2,
+        'prettier-atom-space-parenthesis.prettierOptions.parser': 'flow',
+        'prettier-atom-space-parenthesis.prettierOptions.singleQuote': true,
+        'prettier-atom-space-parenthesis.prettierOptions.trailingComma': true,
+        'prettier-atom-space-parenthesis.prettierOptions.bracketSpacing': true,
+        'prettier-atom-space-parenthesis.prettierOptions.semi': true,
+        'prettier-atom-space-parenthesis.prettierOptions.useTabs': true,
+        'prettier-atom-space-parenthesis.prettierOptions.jsxBracketSameLine': true,
       }[option]);
     atom = { config: { get: mockGet } };
     const editor = textEditor();
@@ -342,15 +342,15 @@ describe('getPrettierOptions', () => {
       (option === 'editor.tabLength'
         ? 8
         : {
-          'prettier-atom.prettierOptions.printWidth': 80,
-          'prettier-atom.prettierOptions.tabWidth': 'auto',
-          'prettier-atom.prettierOptions.parser': 'flow',
-          'prettier-atom.prettierOptions.singleQuote': true,
-          'prettier-atom.prettierOptions.trailingComma': true,
-          'prettier-atom.prettierOptions.bracketSpacing': true,
-          'prettier-atom.prettierOptions.semi': true,
-          'prettier-atom.prettierOptions.useTabs': true,
-          'prettier-atom.prettierOptions.jsxBracketSameLine': true,
+          'prettier-atom-space-parenthesis.prettierOptions.printWidth': 80,
+          'prettier-atom-space-parenthesis.prettierOptions.tabWidth': 'auto',
+          'prettier-atom-space-parenthesis.prettierOptions.parser': 'flow',
+          'prettier-atom-space-parenthesis.prettierOptions.singleQuote': true,
+          'prettier-atom-space-parenthesis.prettierOptions.trailingComma': true,
+          'prettier-atom-space-parenthesis.prettierOptions.bracketSpacing': true,
+          'prettier-atom-space-parenthesis.prettierOptions.semi': true,
+          'prettier-atom-space-parenthesis.prettierOptions.useTabs': true,
+          'prettier-atom-space-parenthesis.prettierOptions.jsxBracketSameLine': true,
         }[option]);
     atom = { config: { get: mockGet } };
     const editor = textEditor({ getLastCursor: () => ({ getScopeDescriptor: () => 'source.js.jsx' }) });
@@ -366,7 +366,7 @@ describe('getPrettierEslintOptions', () => {
   test('returns all prettier-eslint options', () => {
     const mockGet = option =>
       ({
-        'prettier-atom.prettierEslintOptions.prettierLast': true,
+        'prettier-atom-space-parenthesis.prettierEslintOptions.prettierLast': true,
       }[option]);
     atom = { config: { get: mockGet } };
     const actual = getPrettierEslintOptions();
@@ -408,7 +408,7 @@ describe('runLinter()', () => {
 });
 
 describe('getDebugInfo()', () => {
-  test('returns versions of prettier-atom + dependencies, and its configuration', () => {
+  test('returns versions of prettier-atom-space-parenthesis + dependencies, and its configuration', () => {
     const expectedAtomVersion = '4.44.44';
     const expectedConfig = 'config';
     const mockGetVersion = jest.fn(() => expectedAtomVersion);
