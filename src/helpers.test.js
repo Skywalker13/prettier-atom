@@ -1,7 +1,7 @@
 // @flow
 const path = require('path');
 const atomLinter = require('atom-linter');
-const prettier = require('prettier');
+const prettier = require('prettier-atom-parenthesis');
 
 const textEditor = require('../tests/mocks/textEditor');
 const {
