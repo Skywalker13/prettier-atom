@@ -24,7 +24,7 @@
     "atom-linter": "^10.0.0",
     "ignore": "^3.2.7",
     "loophole": "^1.1.0",
-    "prettier": "^1.2.2",
+    "prettier-space-parenthesis": "^1.2.201",
     "prettier-eslint": "^6.0.0",
     "read-pkg": "^2.0.0"
   },
