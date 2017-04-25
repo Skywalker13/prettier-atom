@@ -1,5 +1,7 @@
 # Prettier for Atom using prettier-space-parenthesis fork
 
+See https://github.com/Skywalker13/prettier-space-parenthesis
+
 # Prettier for Atom [![Watch on GitHub][github-watch-badge]][github-watch][![Star on GitHub][github-star-badge]][github-star][![Tweet][twitter-badge]][twitter]
 
 <!-- [![Dependencies][dependencyci-badge]][dependencyci] TODO: Add dependency CI! -->
