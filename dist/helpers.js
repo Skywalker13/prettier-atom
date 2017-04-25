@@ -6,7 +6,7 @@ var _require = require('atom-linter'),
 var fs = require('fs');
 var ignore = require('ignore');
 var path = require('path');
-var bundledPrettier = require('prettier-atom-parenthesis');
+var bundledPrettier = require('prettier-space-parenthesis');
 var readPkg = require('read-pkg');
 
 // constants

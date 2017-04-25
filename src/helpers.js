@@ -3,7 +3,7 @@ const { findCached } = require('atom-linter');
 const fs = require('fs');
 const ignore = require('ignore');
 const path = require('path');
-const bundledPrettier = require('prettier-atom-parenthesis');
+const bundledPrettier = require('prettier-space-parenthesis');
 const readPkg = require('read-pkg');
 
 // constants
