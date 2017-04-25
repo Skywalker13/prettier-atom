@@ -1,5 +1,5 @@
 {
-  "name": "prettier-atom",
+  "name": "prettier-atom-space-parenthesis",
   "main": "./dist/main.js",
   "version": "0.29.0",
   "description": "Atom plugin for formatting JavaScript using prettier with (optional) prettier-eslint integration",
@@ -11,10 +11,10 @@
     "eslint",
     "formatter"
   ],
-  "repository": "https://github.com/prettier/prettier-atom",
-  "homepage": "https://github.com/prettier/prettier-atom",
+  "repository": "https://github.com/Skywalker13/prettier-atom-space-parenthesis",
+  "homepage": "https://github.com/Skywalker13/prettier-atom-space-parenthesis",
   "bugs": {
-    "url": "https://github.com/prettier/prettier-atom/issues"
+    "url": "https://github.com/Skywalker13/prettier-atom-space-parenthesis/issues"
   },
   "license": "MIT",
   "engines": {
