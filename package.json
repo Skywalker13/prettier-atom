@@ -2,7 +2,7 @@
   "name": "prettier-atom-space-parenthesis",
   "main": "./dist/main.js",
   "version": "0.30.102",
-  "description": "Atom plugin for formatting JavaScript using prettier with (optional) prettier-eslint integration",
+  "description": "Fork of prettier-atom: atom plugin for formatting JavaScript using prettier with (optional) prettier-eslint integration",
   "keywords": [
     "atom",
     "javascript",
