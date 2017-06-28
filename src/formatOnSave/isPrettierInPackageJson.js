@@ -22,7 +22,7 @@ const readContentsOfNearestPackageJson: TextEditor => {} = _.flow(
 
 const isPrettierInPackageJson: (editor: TextEditor) => boolean = _.flow(
   readContentsOfNearestPackageJson,
-  hasPackage('prettier'),
+  hasPackage('prettier-space-parenthesis'),
 );
 
 const isPrettierEslintInPackageJson: (editor: TextEditor) => boolean = _.flow(

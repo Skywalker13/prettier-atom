@@ -13,7 +13,7 @@ var getDepPath = function getDepPath(dep) {
 };
 
 var getDebugInfo = function getDebugInfo() {
-  return ('\nAtom version: ' + getAtomVersion() + '\nprettier-atom version: ' + readPkgUp.sync(__dirname).version + '\nprettier version: ' + readPkgUp.sync(getDepPath('prettier')).version + '\nprettier-eslint version: ' + readPkgUp.sync(getDepPath('prettier-eslint')).version + '\nprettier-atom configuration: ' + JSON.stringify(getPrettierAtomConfig(), null, 2) + '\n').trim();
+  return ('\nAtom version: ' + getAtomVersion() + '\nprettier-atom-space-parenthesis version: ' + readPkgUp.sync(__dirname).version + '\nprettier-space-parenthesis version: ' + readPkgUp.sync(getDepPath('nprettier-space-parenthesis')).version + '\nprettier-eslint version: ' + readPkgUp.sync(getDepPath('prettier-eslint')).version + '\nprettier-atom configuration: ' + JSON.stringify(getPrettierAtomConfig(), null, 2) + '\n').trim();
 };
 
 var displayDebugInfo = function displayDebugInfo() {

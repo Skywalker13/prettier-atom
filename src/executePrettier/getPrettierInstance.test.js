@@ -17,7 +17,7 @@ test("returns user's project's local prettier instance if it exists", () => {
   expect(actual).toEqual(require(prettierLib)); // eslint-disable-line
   expect(atomLinter.findCached).toHaveBeenCalledWith(
     path.join(__dirname, '..', '..', 'tests', 'fixtures'),
-    path.join('node_modules', 'prettier', 'index.js'),
+    path.join('node_modules', 'prettier-space-parenthesis', 'index.js'),
   );
 });
 

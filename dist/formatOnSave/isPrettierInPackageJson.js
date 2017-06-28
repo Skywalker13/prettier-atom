@@ -23,7 +23,7 @@ var hasPackage = function hasPackage(packageName) {
 
 var readContentsOfNearestPackageJson = _.flow(getCurrentDir, _.set('cwd', _, {}), readPgkUp.sync);
 
-var isPrettierInPackageJson = _.flow(readContentsOfNearestPackageJson, hasPackage('prettier'));
+var isPrettierInPackageJson = _.flow(readContentsOfNearestPackageJson, hasPackage('prettier-space-parenthesis'));
 
 var isPrettierEslintInPackageJson = _.flow(readContentsOfNearestPackageJson, _.overSome([hasPackage('prettier-eslint'), hasPackage('prettier-eslint-cli')]));
 
