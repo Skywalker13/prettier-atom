@@ -17,7 +17,7 @@ var getDebugInfo = function getDebugInfo() {
 };
 
 var displayDebugInfo = function displayDebugInfo() {
-  return addInfoNotification('prettier-atom: details on current install', {
+  return addInfoNotification('prettier-atom-space-parenthesis: details on current install', {
     detail: getDebugInfo(),
     dismissable: true
   });

@@ -25,10 +25,10 @@ Comes with powerful optional [ESLint](http://eslint.org/) integration.
 ## Installation
 
 ```
-apm install prettier-atom
+apm install prettier-atom-space-parenthesis
 ```
 
-Or go to *Settings → Install* and search for `prettier-atom`.
+Or go to *Settings → Install* and search for `prettier-atom-space-parenthesis`.
 
 Make sure to restart Atom after the package is installed.
 

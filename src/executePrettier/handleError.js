@@ -3,7 +3,7 @@ const _ = require('lodash/fp');
 const { shouldDisplayErrors, addErrorNotification } = require('../atomInterface');
 
 const displayError = (error: Error) =>
-  addErrorNotification('prettier-atom failed!', {
+  addErrorNotification('prettier-atom-space-parenthesis failed!', {
     detail: error.toString(),
     stack: error.stack,
     dismissable: true,

@@ -18,7 +18,7 @@ test('it displays a notification on Atom with package information', () => {
 
   displayDebugInfo();
 
-  expect(title).toContain('prettier-atom');
+  expect(title).toContain('prettier-atom-space-parenthesis');
   expect(options.detail).toMatchSnapshot();
   expect(options.dismissable).toBe(true);
 });

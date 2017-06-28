@@ -4,9 +4,9 @@
 const LINTER_LINT_COMMAND = 'linter:lint';
 
 // local helpers
-const getConfigOption = (key: string) => atom.config.get(`prettier-atom.${key}`);
+const getConfigOption = (key: string) => atom.config.get(`prettier-atom-space-parenthesis.${key}`);
 
-const setConfigOption = (key: string, value: any) => atom.config.set(`prettier-atom.${key}`, value);
+const setConfigOption = (key: string, value: any) => atom.config.set(`prettier-atom-space-parenthesis.${key}`, value);
 
 const isLinterLintCommandDefined = (editor: TextEditor) =>
   atom.commands
@@ -53,7 +53,7 @@ const getPrettierEslintOptions = () => getConfigOption('prettierEslintOptions');
 
 const getAtomVersion = () => atom.getVersion();
 
-const getPrettierAtomConfig = () => atom.config.get('prettier-atom');
+const getPrettierAtomConfig = () => atom.config.get('prettier-atom-space-parenthesis');
 
 const addTooltip = (element: HTMLElement, options: Atom$Tooltips$Options) =>
   atom.tooltips.add(element, options);

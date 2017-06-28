@@ -12,7 +12,7 @@ it('displays an error notification is shouldDisplayErrors is true', () => {
   const message = addErrorNotification.mock.calls[0][0];
   const options = addErrorNotification.mock.calls[0][1];
 
-  expect(message).toMatch('prettier-atom');
+  expect(message).toMatch('prettier-atom-space-parenthesis');
   expect(options.dismissable).toBe(true);
   expect(options.detail).toEqual(error.toString());
 });

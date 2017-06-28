@@ -8,14 +8,14 @@ const getDepPath = (dep: string) => path.join(__dirname, '..', '..', 'node_modul
 const getDebugInfo = () =>
   `
 Atom version: ${getAtomVersion()}
-prettier-atom version: ${readPkgUp.sync(__dirname).version}
+prettier-atom-space-parenthesis version: ${readPkgUp.sync(__dirname).version}
 prettier version: ${readPkgUp.sync(getDepPath('prettier')).version}
 prettier-eslint version: ${readPkgUp.sync(getDepPath('prettier-eslint')).version}
-prettier-atom configuration: ${JSON.stringify(getPrettierAtomConfig(), null, 2)}
+prettier-atom-space-parenthesis configuration: ${JSON.stringify(getPrettierAtomConfig(), null, 2)}
 `.trim();
 
 const displayDebugInfo = () =>
-  addInfoNotification('prettier-atom: details on current install', {
+  addInfoNotification('prettier-atom-space-parenthesis: details on current install', {
     detail: getDebugInfo(),
     dismissable: true,
   });

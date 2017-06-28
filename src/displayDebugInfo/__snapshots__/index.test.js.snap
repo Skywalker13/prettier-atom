@@ -2,8 +2,8 @@
 
 exports[`it displays a notification on Atom with package information 1`] = `
 "Atom version: FAKE_ATOM_VERSION
-prettier-atom version: FAKE_PACKAGE_VERSION
+prettier-atom-space-parenthesis version: FAKE_PACKAGE_VERSION
 prettier version: FAKE_PACKAGE_VERSION
 prettier-eslint version: FAKE_PACKAGE_VERSION
-prettier-atom configuration: \\"FAKE_PRETTIER_ATOM_CONFIG\\""
+prettier-atom-space-parenthesis configuration: \\"FAKE_PRETTIER_ATOM_CONFIG\\""
 `;

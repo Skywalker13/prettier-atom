@@ -74,7 +74,7 @@ var attachStatusTile = function attachStatusTile() {
     });
     updateStatusTile(subscriptions, tileElement);
 
-    subscriptions.add(atom.config.observe('prettier-atom.formatOnSaveOptions.enabled', function () {
+    subscriptions.add(atom.config.observe('prettier-atom-space-parenthesis.formatOnSaveOptions.enabled', function () {
       return updateStatusTile(subscriptions, tileElement);
     }));
     subscriptions.add(atom.workspace.onDidChangeActiveTextEditor(function (editor) {
@@ -109,7 +109,7 @@ var activate = function activate() {
   subscriptions.add(atom.config.observe('prettier-atom-space-parenthesis.useEslint', function () {
     return lazyWarnAboutLinterEslintFixOnSave();
   }));
-  subscriptions.add(atom.config.observe('prettier-atom.formatOnSaveOptions.showInStatusBar', function (show) {
+  subscriptions.add(atom.config.observe('prettier-atom-space-parenthesis.formatOnSaveOptions.showInStatusBar', function (show) {
     return show ? attachStatusTile() : detachStatusTile();
   }));
 
@@ -127,7 +127,7 @@ var deactivate = function deactivate() {
 var consumeStatusBar = function consumeStatusBar(statusBar) {
   statusBarHandler = statusBar;
 
-  var showInStatusBar = atom.config.get('prettier-atom.formatOnSaveOptions.showInStatusBar');
+  var showInStatusBar = atom.config.get('prettier-atom-space-parenthesis.formatOnSaveOptions.showInStatusBar');
   if (showInStatusBar) {
     attachStatusTile();
   }

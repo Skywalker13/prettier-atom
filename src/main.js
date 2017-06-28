@@ -64,7 +64,7 @@ const attachStatusTile = () => {
     updateStatusTile(subscriptions, tileElement);
 
     subscriptions.add(
-      atom.config.observe('prettier-atom.formatOnSaveOptions.enabled', () =>
+      atom.config.observe('prettier-atom-space-parenthesis.formatOnSaveOptions.enabled', () =>
         updateStatusTile(subscriptions, tileElement),
       ),
     );
@@ -123,7 +123,7 @@ const deactivate = () => {
 const consumeStatusBar = (statusBar) => {
   statusBarHandler = statusBar;
 
-  const showInStatusBar = atom.config.get('prettier-atom.formatOnSaveOptions.showInStatusBar');
+  const showInStatusBar = atom.config.get('prettier-atom-space-parenthesis.formatOnSaveOptions.showInStatusBar');
   if (showInStatusBar) {
     attachStatusTile();
   }

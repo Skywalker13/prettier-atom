@@ -7,7 +7,7 @@ var _require = require('../atomInterface'),
     addErrorNotification = _require.addErrorNotification;
 
 var displayError = function displayError(error) {
-  return addErrorNotification('prettier-atom failed!', {
+  return addErrorNotification('prettier-atom-space-parenthesis failed!', {
     detail: error.toString(),
     stack: error.stack,
     dismissable: true

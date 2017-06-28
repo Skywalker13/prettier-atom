@@ -7,11 +7,11 @@ var LINTER_LINT_COMMAND = 'linter:lint';
 
 // local helpers
 var getConfigOption = function getConfigOption(key) {
-  return atom.config.get('prettier-atom.' + key);
+  return atom.config.get('prettier-atom-space-parenthesis.' + key);
 };
 
 var setConfigOption = function setConfigOption(key, value) {
-  return atom.config.set('prettier-atom.' + key, value);
+  return atom.config.set('prettier-atom-space-parenthesis.' + key, value);
 };
 
 var isLinterLintCommandDefined = function isLinterLintCommandDefined(editor) {
@@ -94,7 +94,7 @@ var getAtomVersion = function getAtomVersion() {
 };
 
 var getPrettierAtomConfig = function getPrettierAtomConfig() {
-  return atom.config.get('prettier-atom');
+  return atom.config.get('prettier-atom-space-parenthesis');
 };
 
 var addTooltip = function addTooltip(element, options) {

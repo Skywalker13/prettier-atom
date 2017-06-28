@@ -48,7 +48,7 @@ describe('shouldUseEslint()', () => {
 
     const actual = shouldUseEslint();
 
-    expect(mockGet).toHaveBeenCalledWith('prettier-atom.useEslint');
+    expect(mockGet).toHaveBeenCalledWith('prettier-atom-space-parenthesis.useEslint');
     expect(actual).toBe(true);
   });
 
@@ -58,7 +58,7 @@ describe('shouldUseEslint()', () => {
 
     const actual = shouldUseEslint();
 
-    expect(mockGet).toHaveBeenCalledWith('prettier-atom.useEslint');
+    expect(mockGet).toHaveBeenCalledWith('prettier-atom-space-parenthesis.useEslint');
     expect(actual).toBe(false);
   });
 });
@@ -70,19 +70,19 @@ describe('shouldDisplayErrors()', () => {
 
     const actual = shouldDisplayErrors();
 
-    expect(mockGet).lastCalledWith('prettier-atom.silenceErrors');
+    expect(mockGet).lastCalledWith('prettier-atom-space-parenthesis.silenceErrors');
     expect(actual).toBe(false);
   });
 });
 
 describe('getPrettierEslintOptions()', () => {
-  it('retrieves the given prettier-eslint options from the prettier-atom config', () => {
+  it('retrieves the given prettier-eslint options from the prettier-atom-space-parenthesis config', () => {
     const mockGet = jest.fn(() => true);
     atom = { config: { get: mockGet } };
 
     const actual = getPrettierEslintOptions();
 
-    expect(mockGet).lastCalledWith('prettier-atom.prettierEslintOptions');
+    expect(mockGet).lastCalledWith('prettier-atom-space-parenthesis.prettierEslintOptions');
     expect(actual).toBe(true);
   });
 });
@@ -117,15 +117,15 @@ describe('getPrettierOptions()', () => {
   it('returns all prettier options', () => {
     const mockGet = option =>
       ({
-        'prettier-atom.prettierOptions.printWidth': 80,
-        'prettier-atom.prettierOptions.tabWidth': 2,
-        'prettier-atom.prettierOptions.parser': 'flow',
-        'prettier-atom.prettierOptions.singleQuote': true,
-        'prettier-atom.prettierOptions.trailingComma': true,
-        'prettier-atom.prettierOptions.bracketSpacing': true,
-        'prettier-atom.prettierOptions.semi': true,
-        'prettier-atom.prettierOptions.useTabs': true,
-        'prettier-atom.prettierOptions.jsxBracketSameLine': true,
+        'prettier-atom-space-parenthesis.prettierOptions.printWidth': 80,
+        'prettier-atom-space-parenthesis.prettierOptions.tabWidth': 2,
+        'prettier-atom-space-parenthesis.prettierOptions.parser': 'flow',
+        'prettier-atom-space-parenthesis.prettierOptions.singleQuote': true,
+        'prettier-atom-space-parenthesis.prettierOptions.trailingComma': true,
+        'prettier-atom-space-parenthesis.prettierOptions.bracketSpacing': true,
+        'prettier-atom-space-parenthesis.prettierOptions.semi': true,
+        'prettier-atom-space-parenthesis.prettierOptions.useTabs': true,
+        'prettier-atom-space-parenthesis.prettierOptions.jsxBracketSameLine': true,
       }[option]);
     atom = { config: { get: mockGet } };
     const editor = textEditor();
@@ -142,7 +142,7 @@ describe('toggleFormatOnSave()', () => {
 
     toggleFormatOnSave();
 
-    expect(atom.config.set).toHaveBeenCalledWith('prettier-atom.formatOnSaveOptions.enabled', false);
+    expect(atom.config.set).toHaveBeenCalledWith('prettier-atom-space-parenthesis.formatOnSaveOptions.enabled', false);
   });
 
   it('sets formatOnSaveOptions.enabled to true if it was false', () => {
@@ -150,6 +150,6 @@ describe('toggleFormatOnSave()', () => {
 
     toggleFormatOnSave();
 
-    expect(atom.config.set).toHaveBeenCalledWith('prettier-atom.formatOnSaveOptions.enabled', true);
+    expect(atom.config.set).toHaveBeenCalledWith('prettier-atom-space-parenthesis.formatOnSaveOptions.enabled', true);
   });
 });
