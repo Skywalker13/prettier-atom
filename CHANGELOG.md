@@ -1,3 +1,79 @@
+<a name="0.34.0"></a>
+# [0.34.0](https://github.com/prettier/prettier-atom/compare/v0.33.0...v0.34.0) (2017-06-22)
+
+
+### Bug Fixes
+
+* **save:** On save, use editor provided by observer ([b93ec93](https://github.com/prettier/prettier-atom/commit/b93ec93)), closes [#96](https://github.com/prettier/prettier-atom/issues/96)
+
+
+### Features
+
+* **css:** Add LESS and SCSS to default scopes for CSS files ([d41a008](https://github.com/prettier/prettier-atom/commit/d41a008)), closes [#195](https://github.com/prettier/prettier-atom/issues/195)
+* **statusTile:** Display status bar tile only if active file matches one of the scopes (file extens ([56467b9](https://github.com/prettier/prettier-atom/commit/56467b9)), closes [#170](https://github.com/prettier/prettier-atom/issues/170)
+
+
+
+<a name="0.33.0"></a>
+# [0.33.0](https://github.com/prettier/prettier-atom/compare/v0.32.0...v0.33.0) (2017-06-08)
+
+
+### Bug Fixes
+
+* **Settings:** Add missing parser options to settings screen ([7d9f22c](https://github.com/prettier/prettier-atom/commit/7d9f22c))
+
+
+### Features
+
+* **format-on-save:** add option to not format on save if prettier not in dependencies ([1a32d47](https://github.com/prettier/prettier-atom/commit/1a32d47)), closes [#43](https://github.com/prettier/prettier-atom/issues/43)
+* **parsers:** add typescript and CSS support ([9882a0b](https://github.com/prettier/prettier-atom/commit/9882a0b)), closes [#183](https://github.com/prettier/prettier-atom/issues/183) [#184](https://github.com/prettier/prettier-atom/issues/184)
+* **prettier:** bump to 1.4.4 ([aa701a0](https://github.com/prettier/prettier-atom/commit/aa701a0))
+* **prettier-eslint:** bump to 6.3.0 ([103ca8b](https://github.com/prettier/prettier-atom/commit/103ca8b))
+
+
+
+<a name="0.32.0"></a>
+# [0.32.0](https://github.com/prettier/prettier-atom/compare/v0.31.1...v0.32.0) (2017-06-02)
+
+
+### Bug Fixes
+
+* **warnings:** Check if linter-eslint is actually active instead of reading user config ([88114c6](https://github.com/prettier/prettier-atom/commit/88114c6)), closes [#168](https://github.com/prettier/prettier-atom/issues/168)
+
+
+### Features
+
+* **prettier:** bump to 1.4.1 ([1791886](https://github.com/prettier/prettier-atom/commit/1791886))
+
+
+
+<a name="0.31.1"></a>
+## [0.31.1](https://github.com/prettier/prettier-atom/compare/v0.31.0...v0.31.1) (2017-05-17)
+
+
+### Bug Fixes
+
+* **debugCommand:** Provide package's absolute path to read package.json ([824dd47](https://github.com/prettier/prettier-atom/commit/824dd47)), closes [#156](https://github.com/prettier/prettier-atom/issues/156)
+
+
+
+<a name="0.31.0"></a>
+# [0.31.0](https://github.com/prettier/prettier-atom/compare/v0.30.0...v0.31.0) (2017-05-14)
+
+
+### Bug Fixes
+
+* **statusBar:** Avoid attaching the status bar tile in activate() ([54eb696](https://github.com/prettier/prettier-atom/commit/54eb696))
+
+
+### Features
+
+* **options:** add editorconfig option to package settings ([ad47fae](https://github.com/prettier/prettier-atom/commit/ad47fae))
+* **statusBar:** Add an option to show/hide formatOnSave's state in the status bar ([1abded3](https://github.com/prettier/prettier-atom/commit/1abded3)), closes [#153](https://github.com/prettier/prettier-atom/issues/153)
+* **statusBar:** Added click handler to toggle formatOnSave ([2710924](https://github.com/prettier/prettier-atom/commit/2710924))
+
+
+
 <a name="0.30.0"></a>
 # [0.30.0](https://github.com/prettier/prettier-atom/compare/v0.29.0...v0.30.0) (2017-05-03)
 
@@ -5,6 +81,7 @@
 ### Features
 
 * **command:** Add a command to toggle "Format on Save" ([bc112c6](https://github.com/prettier/prettier-atom/commit/bc112c6)), closes [#117](https://github.com/prettier/prettier-atom/issues/117)
+* **config:** add .editorconfig support ([e2aff36](https://github.com/prettier/prettier-atom/commit/e2aff36))
 * **eslint-fallbacks:** fallback to user's prettier settings if cannot be inferred from eslint confi ([f4520ac](https://github.com/prettier/prettier-atom/commit/f4520ac))
 * **statusBar:** Add status bar tile to show enabled/disabled state ([f36478b](https://github.com/prettier/prettier-atom/commit/f36478b))
 
@@ -262,6 +339,3 @@ versa.
 
 <a name="0.0.3"></a>
 ## 0.0.3 (2017-01-10)
-
-
-

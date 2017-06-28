@@ -1,7 +1,7 @@
 const config = require('./config-schema.json');
 // eslint-disable-next-line import/no-extraneous-dependencies, import/no-unresolved
 const { CompositeDisposable } = require('atom');
-const { createStatusTile, updateStatusTile, disposeTooltip } = require('./statusTile');
+const { createStatusTile, updateStatusTile, updateStatusTileScope, disposeTooltip } = require('./statusTile');
 
 // local helpers
 let format = null;
@@ -10,22 +10,21 @@ let warnAboutLinterEslintFixOnSave = null;
 let displayDebugInfo = null;
 let toggleFormatOnSave = null;
 let subscriptions = null;
+let statusBarHandler = null;
 let statusBarTile = null;
 let tileElement = null;
 
 // HACK: lazy load most of the code we need for performance
 const lazyFormat = () => {
-  if (!format) format = require('./format'); // eslint-disable-line global-require
+  if (!format) format = require('./manualFormat'); // eslint-disable-line global-require
 
   const editor = atom.workspace.getActiveTextEditor();
   if (editor) format(editor);
 };
 
 // HACK: lazy load most of the code we need for performance
-const lazyFormatOnSave = () => {
+const lazyFormatOnSave = (editor) => {
   if (!formatOnSave) formatOnSave = require('./formatOnSave'); // eslint-disable-line global-require
-
-  const editor = atom.workspace.getActiveTextEditor();
   if (editor) formatOnSave(editor);
 };
 
@@ -50,9 +49,36 @@ const lazyDisplayDebugInfo = () => {
 const lazyToggleFormatOnSave = () => {
   if (!toggleFormatOnSave) {
     // eslint-disable-next-line global-require
-    toggleFormatOnSave = require('./toggleFormatOnSave');
+    toggleFormatOnSave = require('./atomInterface').toggleFormatOnSave;
   }
   toggleFormatOnSave();
+};
+
+const attachStatusTile = () => {
+  if (statusBarHandler) {
+    tileElement = createStatusTile();
+    statusBarTile = statusBarHandler.addLeftTile({
+      item: tileElement,
+      priority: 1000,
+    });
+    updateStatusTile(subscriptions, tileElement);
+
+    subscriptions.add(
+      atom.config.observe('prettier-atom.formatOnSaveOptions.enabled', () =>
+        updateStatusTile(subscriptions, tileElement),
+      ),
+    );
+    subscriptions.add(
+      atom.workspace.onDidChangeActiveTextEditor(editor => updateStatusTileScope(tileElement, editor)),
+    );
+  }
+};
+
+const detachStatusTile = () => {
+  disposeTooltip();
+  if (statusBarTile) {
+    statusBarTile.destroy();
+  }
 };
 
 // public API
@@ -76,34 +102,31 @@ const activate = () => {
   subscriptions.add(
     atom.config.observe('prettier-atom-space-parenthesis.useEslint', () => lazyWarnAboutLinterEslintFixOnSave()),
   );
+  subscriptions.add(
+    atom.config.observe(
+      'prettier-atom-space-parenthesis.formatOnSaveOptions.showInStatusBar',
+      show => (show ? attachStatusTile() : detachStatusTile()),
+    ),
+  );
 
   // HACK: an Atom bug seems to be causing old configuration settings to linger for some users
-  //       https://github.com/jlongster/prettier-atom/issues/72
+  //       https://github.com/prettier/prettier-atom/issues/72
   atom.config.unset('prettier-atom-space-parenthesis.singleQuote');
   atom.config.unset('prettier-atom-space-parenthesis.trailingComma');
 };
 
 const deactivate = () => {
   subscriptions.dispose();
-  disposeTooltip();
-  if (statusBarTile) {
-    statusBarTile.destroy();
-  }
+  detachStatusTile();
 };
 
 const consumeStatusBar = (statusBar) => {
-  tileElement = createStatusTile();
-  statusBarTile = statusBar.addLeftTile({
-    item: tileElement,
-    priority: 1000,
-  });
-  updateStatusTile(subscriptions, tileElement);
+  statusBarHandler = statusBar;
 
-  subscriptions.add(
-    atom.config.observe('prettier-atom.formatOnSaveOptions.enabled', () =>
-      updateStatusTile(subscriptions, tileElement),
-    ),
-  );
+  const showInStatusBar = atom.config.get('prettier-atom.formatOnSaveOptions.showInStatusBar');
+  if (showInStatusBar) {
+    attachStatusTile();
+  }
 };
 
 module.exports = {

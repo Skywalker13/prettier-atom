@@ -12,11 +12,10 @@ declare type TextEditor = {
   getGrammar: () => { scopeName: string },
   getBuffer: () => { getRange: () => Range },
   getCursorScreenPosition: () => Point,
-  getLastCursor: () => { getScopeDescriptor: () => string },
+  getLastCursor: () => { getScopeDescriptor: () => Atom$ScopeDescriptor },
   getSelectedText: () => string,
   getSelectedBufferRanges: () => Ranges,
-  // getTextInRange: () => string,
-  getTextInBufferRange: () => string,
+  getTextInBufferRange: (bufferRange: Range) => string,
   setCursorScreenPosition: (point: Point) => Point,
   setTextInBufferRange: (bufferRange: Range, text: string) => Range,
   buffer: { file: ?{ path: ?FilePath } },
@@ -36,21 +35,31 @@ declare type Atom$Disposable = any;
 declare type Atom$View = any;
 declare type Atom$Workspace = any;
 declare type Atom$Command = { name: string, displayName: string };
+declare type Atom$Notifications$Options = { detail?: ?string, dismissable?: ?boolean };
+declare type Atom$Tooltips$Options = { title?: string };
+declare type Atom$ScopeDescriptor = Object;
 declare var atom: {
   commands: {
     dispatch: (view: Atom$View, commandName: string) => void,
     findCommands: ({ target: Atom$View }) => Array<Atom$Command>,
   },
   config: {
-    get: (key: string) => any,
-    set: (key: string) => any,
+    get: (
+      key: string,
+      options?: {sources?: Array<string>, excludeSources?: Array<string>, scope?: Atom$ScopeDescriptor}
+    ) => any,
+    set: (key: string, value: any) => any,
   },
   notifications: {
-    addError: (message: string, options?: { detail?: string, dismissable?: boolean }) => void,
-    addInfo: (message: string, options?: { detail?: string, dismissable?: boolean }) => void,
+    addError: (message: string, options?: Atom$Notifications$Options) => void,
+    addInfo: (message: string, options?: Atom$Notifications$Options) => void,
+    addWarning: (message: string, options?: Atom$Notifications$Options) => void,
+  },
+  packages: {
+    isPackageActive: (name: string) => boolean,
   },
   tooltips: {
-    add: (target: HTMLElement, options?: { title?: string }) => Atom$Disposable
+    add: (target: HTMLElement, options?: Atom$Tooltips$Options) => Atom$Disposable,
   },
   views: {
     getView: Atom$Workspace => Atom$View,
