@@ -156,13 +156,6 @@
         "default": false,
         "order": 5
       },
-      "spaceParenthesis": {
-        "title": "Space parenthesis",
-        "description": "Add space before all parenthesis",
-        "type": "boolean",
-        "default": true,
-        "order": 10
-      },
       "printWidth": {
         "title": "Print Width",
         "description": "Fit lines of code within this length.",
@@ -199,6 +192,13 @@
           "flow"
         ],
         "order": 9
+      },
+      "spaceParenthesis": {
+        "title": "Space parenthesis",
+        "description": "Add space before all parenthesis",
+        "type": "boolean",
+        "default": true,
+        "order": 10
       }
     }
   },
