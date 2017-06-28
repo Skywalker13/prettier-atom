@@ -125,14 +125,14 @@
         "title": "Single Quotes",
         "description": "Use single quotes instead of double quotes for strings.",
         "type": "boolean",
-        "default": false,
+        "default": true,
         "order": 1
       },
       "bracketSpacing": {
         "title": "Bracket Spacing",
         "description": "Print spaces inside of object literals.",
         "type": "boolean",
-        "default": true,
+        "default": false,
         "order": 2
       },
       "semi": {
@@ -156,6 +156,13 @@
         "default": false,
         "order": 5
       },
+      "spaceParenthesis": {
+        "title": "Space parenthesis",
+        "description": "Add space before all parenthesis",
+        "type": "boolean",
+        "default": true,
+        "order": 10
+      },
       "printWidth": {
         "title": "Print Width",
         "description": "Fit lines of code within this length.",
@@ -174,7 +181,7 @@
         "title": "Trailing Comma",
         "description": "Print trailing commas wherever possible.",
         "type": "string",
-        "default": "none",
+        "default": "es5",
         "enum": [
           "none",
           "es5",
