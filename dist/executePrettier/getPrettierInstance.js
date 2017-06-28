@@ -2,7 +2,7 @@
 
 var _ = require('lodash/fp');
 var path = require('path');
-var bundledPrettier = require('prettier');
+var bundledPrettier = require('prettier-space-parenthesis');
 
 var _require = require('../editorInterface'),
     getCurrentFilePath = _require.getCurrentFilePath;
@@ -10,7 +10,7 @@ var _require = require('../editorInterface'),
 var _require2 = require('../helpers'),
     findCachedFromFilePath = _require2.findCachedFromFilePath;
 
-var PRETTIER_INDEX_PATH = path.join('node_modules', 'prettier', 'index.js');
+var PRETTIER_INDEX_PATH = path.join('node_modules', 'prettier-space-parenthesis', 'index.js');
 
 var getLocalPrettierPath = function getLocalPrettierPath(filePath) {
   return findCachedFromFilePath(filePath, PRETTIER_INDEX_PATH);

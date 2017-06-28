@@ -1,6 +1,6 @@
 jest.mock('atom-linter');
 
-const prettier = require('prettier');
+const prettier = require('prettier-space-parenthesis');
 const path = require('path');
 const atomLinter = require('atom-linter');
 const createMockTextEditor = require('../../tests/mocks/textEditor');

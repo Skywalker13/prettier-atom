@@ -7,7 +7,7 @@ jest.mock('./buildPrettierOptions');
 jest.mock('./buildPrettierEslintOptions');
 jest.mock('./handleError');
 
-const prettier = require('prettier');
+const prettier = require('prettier-space-parenthesis');
 const prettierEslint = require('prettier-eslint');
 const { shouldUseEslint, runLinter } = require('../atomInterface');
 const { getCurrentFilePath } = require('../editorInterface');

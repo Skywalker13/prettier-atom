@@ -1,11 +1,11 @@
 // @flow
 const _ = require('lodash/fp');
 const path = require('path');
-const bundledPrettier = require('prettier');
+const bundledPrettier = require('prettier-space-parenthesis');
 const { getCurrentFilePath } = require('../editorInterface');
 const { findCachedFromFilePath } = require('../helpers');
 
-const PRETTIER_INDEX_PATH = path.join('node_modules', 'prettier', 'index.js');
+const PRETTIER_INDEX_PATH = path.join('node_modules', 'prettier-space-parenthesis', 'index.js');
 
 const getLocalPrettierPath = (filePath: ?FilePath): ?FilePath =>
   findCachedFromFilePath(filePath, PRETTIER_INDEX_PATH);
