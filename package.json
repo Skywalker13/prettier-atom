@@ -26,8 +26,8 @@
     "ignore": "^3.3.3",
     "lodash": "^4.17.4",
     "loophole": "^1.1.0",
-    "prettier-space-parenthesis": "^1.5.200",
     "prettier-eslint": "^6.3.0",
+    "prettier-space-parenthesis": "^1.5.200",
     "read-pkg-up": "^2.0.0"
   },
   "devDependencies": {
